@@ -35,5 +35,30 @@ namespace XUnitTestProject1
         {
             Assert.Equal(2, num.DigitalRoot(493193));
         }
+
+        [Fact]
+        public void Test5()
+        {
+            Assert.Equal(5, num.DigitalRoot(-50));
+        }
+
+        [Fact]
+        public void Test6()
+        {
+            Assert.Equal(0, num.DigitalRoot(0));
+        }
+
+        [Fact]
+        public void Test7()
+        {
+            Assert.Equal(5, num.DigitalRoot(-727379969));
+        }
+
+        [Fact]
+        public void TestMinMax()
+        {
+            Assert.Equal(0, num.DigitalRoot(long.MinValue));
+            Assert.Equal(0, num.DigitalRoot(long.MaxValue));
+        }
     }
 }

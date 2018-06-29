@@ -14,15 +14,17 @@ namespace DigitalRoot
     {
         public int DigitalRoot(long n)
         {
-            int result = (int)n;
+            if (n <= long.MinValue || n >= long.MaxValue)
+                return 0;
+
+            long result = Math.Abs(n);
 
             while (result >= 10)
             {
                 result = AddNumbers(result);
             }
             
-            
-            return result;
+            return (int) result;
         }
 
         private int AddNumbers(long number)
