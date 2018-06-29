@@ -1,4 +1,6 @@
-﻿namespace DigitalRoot
+﻿using System;
+
+namespace DigitalRoot
 {
     /// <summary>
     /// Codekata: Digital root
@@ -12,9 +14,24 @@
     {
         public int DigitalRoot(long n)
         {
+            int result = (int)n;
+
+            while (result >= 10)
+            {
+                result = AddNumbers(result);
+            }
+            
+            
+            return result;
+        }
+
+        private int AddNumbers(long number)
+        {
             int result = 0;
-
-
+            for (int i = 0; i < number.ToString().Length; i++)
+            {
+                result += Convert.ToInt32(number.ToString().Substring(i, 1));
+            }
 
             return result;
         }
